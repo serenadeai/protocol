@@ -1,0 +1,12 @@
+{
+  "name": "javascript-editor",
+  "version": "1.0.0",
+  "description": "A Serenade plugin that responds to several editor-related commands.",
+  "main": "index.js",
+  "repository": "https://github.com/serenadeai/protocol",
+  "author": "Serenade <contact@serenade.ai>",
+  "license": "MIT",
+  "dependencies": {
+    "ws": "^7.4.3"
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "name": "javascript-echo",
+  "version": "1.0.0",
+  "description": "A Serenade plugin that echoes commands it receives to the console.",
+  "main": "index.js",
+  "repository": "https://github.com/serenadeai/protocol",
+  "author": "Serenade <contact@serenade.ai>",
+  "license": "MIT",
+  "dependencies": {
+    "ws": "^7.4.3"
+  }
+}
