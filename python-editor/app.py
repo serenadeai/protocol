@@ -27,13 +27,13 @@ async def send_heartbeat():
 
 
 async def handle(message):
-    result = None
     data = json.loads(message)["data"]
 
     # if Serenade doesn't have anything for us to execute, then we're done
-    if not data["response"]["execute"]:
+    if "response" not in data or "execute" not in data["response"]:
         return
 
+    result = {"message": "completed"}
     for command in data["response"]["execute"]["commandsList"]:
         if command["type"] == "COMMAND_TYPE_GET_EDITOR_STATE":
             result = {
@@ -48,10 +48,7 @@ async def handle(message):
         elif command["type"] == "COMMAND_TYPE_PREVIOUS_TAB":
             editor.previous_tab()
 
-    if result:
-        await send("callback", {"callback": data["callback"], "data": result})
-    else:
-        await send("completed", {})
+    await send("callback", {"callback": data["callback"], "data": result})
 
 
 async def handler():

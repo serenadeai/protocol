@@ -1,10 +1,10 @@
-![Serenade Logo](https://cdn.serenade.ai/img/logo-small.png)
+<img src="https://cdn.serenade.ai/img/logo-github.png" width="250px" alt="Serenade Logo" />
 
 # Serenade Protocol Examples
 
 This repository contains example applications demonstrating how to use the Serenade Protocol. If you're looking to create your own Serenade plugin or integrate Serenade into your application, these examples are a great starting point.
 
-For documentation on the Serenade Protocol, see https://serenade.ai/protocol.
+For documentation on the Serenade Protocol, see https://serenade.ai/docs/protocol.
 
 ## Examples
 

@@ -40,12 +40,14 @@ const connect = () => {
 };
 
 const handle = (message) => {
-  let result = null;
-  const data = JSON.parse(message).data;
-
   // if Serenade doesn't have anything for us to execute, then we're done
-  if (!data.response.execute) {
+  const data = JSON.parse(message).data;
+  if (!data.response || !data.response.execute) {
     return;
+  }
+
+  let result = {
+    message: "completed";
   }
 
   for (const command of data.response.execute.commandsList) {
@@ -70,14 +72,10 @@ const handle = (message) => {
     }
   }
 
-  if (result) {
-    send("callback", {
-      callback: data.callback,
-      data: result,
-    });
-  } else {
-    send("completed", {});
-  }
+  send("callback", {
+    callback: data.callback,
+    data: result
+  });
 };
 
 const send = (message, data) => {
